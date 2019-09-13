@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -151,7 +151,7 @@ namespace libmalwr_csharp
                     {
                         webClient.Headers.Add(UAString);
                     }
-                    webClient.DownloadFile(Url, Path.Combine(TargetDirectory, TargetFileName, TargetFileExtension));
+                    webClient.DownloadFile(Url, Path.Combine(TargetDirectory, TargetFileName + "." + TargetFileExtension));
                 }
                 return true;
             }
@@ -180,7 +180,7 @@ namespace libmalwr_csharp
         {
             try
             {
-                string TargetFilePath = Path.Combine(TargetDirectory, TargetFileName, TargetFileExtension);
+                string TargetFilePath = Path.Combine(TargetDirectory, TargetFileName + "." + TargetFileExtension);
                 using (WebClient webClient = new WebClient())
                 {
                     if (!String.IsNullOrEmpty(UAString))
